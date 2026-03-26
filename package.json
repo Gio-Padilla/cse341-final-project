@@ -1,0 +1,30 @@
+{
+  "name": "cse341-final-project",
+  "version": "1.0.0",
+  "description": "An example database for a Travel Agency used in a school project as a team.",
+  "homepage": "https://github.com/Gio-Padilla/cse341-final-project#readme",
+  "bugs": {
+    "url": "https://github.com/Gio-Padilla/cse341-final-project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gio-Padilla/cse341-final-project.git"
+  },
+  "license": "ISC",
+  "author": "Team 07",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "swagger": "node swagger.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongodb": "^7.1.1",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

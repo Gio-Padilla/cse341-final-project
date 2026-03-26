@@ -1,0 +1,35 @@
+[
+  {
+    "packageId": "PKG3001",
+    "title": "Romantic Paris Getaway",
+    "destinationId": "DST2001",
+    "durationDays": 5,
+    "price": 1200,
+    "includesFlight": true,
+    "includesHotel": true,
+    "maxPeople": 2,
+    "description": "Perfect for couples"
+  },
+  {
+    "packageId": "PKG3002",
+    "title": "Tokyo Explorer",
+    "destinationId": "DST2002",
+    "durationDays": 7,
+    "price": 1800,
+    "includesFlight": true,
+    "includesHotel": true,
+    "maxPeople": 4,
+    "description": "Explore Japan’s capital"
+  },
+  {
+    "packageId": "PKG3003",
+    "title": "Cancun Beach Fun",
+    "destinationId": "DST2003",
+    "durationDays": 4,
+    "price": 900,
+    "includesFlight": false,
+    "includesHotel": true,
+    "maxPeople": 6,
+    "description": "Relaxing beach vacation"
+  }
+]

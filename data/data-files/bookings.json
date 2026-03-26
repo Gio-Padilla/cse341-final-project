@@ -1,0 +1,32 @@
+[
+  {
+    "bookingId": "BKG4001",
+    "userId": "USR1001",
+    "packageId": "PKG3001",
+    "bookingDate": "2026-03-10T12:00:00Z",
+    "travelDate": "2026-06-01T00:00:00Z",
+    "numberOfPeople": 2,
+    "totalPrice": 2400,
+    "status": "confirmed"
+  },
+  {
+    "bookingId": "BKG4002",
+    "userId": "USR1002",
+    "packageId": "PKG3002",
+    "bookingDate": "2026-03-12T15:45:00Z",
+    "travelDate": "2026-07-15T00:00:00Z",
+    "numberOfPeople": 3,
+    "totalPrice": 5400,
+    "status": "pending"
+  },
+  {
+    "bookingId": "BKG4003",
+    "userId": "USR1003",
+    "packageId": "PKG3003",
+    "bookingDate": "2026-03-15T09:20:00Z",
+    "travelDate": "2026-08-10T00:00:00Z",
+    "numberOfPeople": 5,
+    "totalPrice": 4500,
+    "status": "confirmed"
+  }
+]

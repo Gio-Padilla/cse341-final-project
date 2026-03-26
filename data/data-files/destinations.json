@@ -1,0 +1,29 @@
+[
+  {
+    "destinationId": "DST2001",
+    "name": "Paris",
+    "country": "France",
+    "description": "City of lights and romance",
+    "pricePerDay": 200,
+    "popular": true,
+    "imageUrl": "paris.jpg"
+  },
+  {
+    "destinationId": "DST2002",
+    "name": "Tokyo",
+    "country": "Japan",
+    "description": "Modern city with traditional culture",
+    "pricePerDay": 180,
+    "popular": true,
+    "imageUrl": "tokyo.jpg"
+  },
+  {
+    "destinationId": "DST2003",
+    "name": "Cancun",
+    "country": "Mexico",
+    "description": "Beach paradise",
+    "pricePerDay": 150,
+    "popular": false,
+    "imageUrl": "cancun.jpg"
+  }
+]

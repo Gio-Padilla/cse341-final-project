@@ -1,0 +1,23 @@
+[
+  {
+    "userId": "123456789012345678901",
+    "email": "alice@example.com",
+    "name": "Alice Johnson",
+    "phone": "+15551234567",
+    "role": "user"
+  },
+  {
+    "userId": "234567890123456789012",
+    "email": "bob.manager@example.com",
+    "name": "Bob Smith",
+    "phone": "+15559876543",
+    "role": "manager"
+  },
+  {
+    "userId": "345678901234567890123",
+    "email": "carol@example.com",
+    "name": "Carol Lee",
+    "phone": "+15557654321",
+    "role": "user"
+  }
+]
