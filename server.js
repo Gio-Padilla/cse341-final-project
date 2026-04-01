@@ -21,7 +21,7 @@ app.use(cors({
 }));
 
 // Routes
-app.use('/', require('./routes'));
+app.use('/', require('./routes/index.js'));
 
 // 404 handler
 app.use((req, res) => {
