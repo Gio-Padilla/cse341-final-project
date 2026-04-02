@@ -7,8 +7,8 @@ const doc = {
         title: 'Travel Agency Api',
         description: 'An API for accessing the data of a travel agency.',
     },
-    host: 'localhost:8080',
-    schemes: ['http', 'https'],
+    host: 'cse341-final-project-z840.onrender.com',
+    schemes: ['https'],
 };
 
 const outputFile = './swagger.json';
