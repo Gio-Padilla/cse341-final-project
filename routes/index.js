@@ -13,7 +13,6 @@ const authenticate = require('../utilities/authenticate');
 // Root route (shows login status)
 // Uses it based off of the saved user in the server.js file
 router.get('/', (req, res) => {
-    console.log('req.user:', req.user); // <-- debug output
     if (req.user) {
         const name = req.user.name;
         res.send(`Logged in as ${name}`);
