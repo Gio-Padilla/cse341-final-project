@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const bookingsController = require('../controllers/bookings');
+const { bookingValidator } = require('../utilities/validator');
 
 // Get all bookings
 router.get(
@@ -30,6 +31,7 @@ router.post(
     '/',
     //#swagger.tags = ['Booking']
     //#swagger.summary = 'Create a booking.'
+    bookingValidator,
     bookingsController.addBooking
 );
 
@@ -37,7 +39,8 @@ router.post(
 router.put(
     '/:bookingId',
     //#swagger.tags = ['Booking']
-    //#swagger.summary = 'Update a booking by bookingId'
+    //#swagger.summary = 'Update a booking by bookingId',
+    bookingValidator,
     bookingsController.editBooking
 );
 

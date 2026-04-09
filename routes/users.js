@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const usersController = require('../controllers/users');
+const { userValidator } = require('../utilities/validator');
 
 // Get all users
 router.get(
@@ -21,7 +22,8 @@ router.get(
 router.post(
     '/',
     //#swagger.tags = ['Users']
-    //#swagger.summary = 'Create a user.'
+    //#swagger.summary = 'Create a user.',
+    userValidator,
     usersController.addUser
 );
 
@@ -29,7 +31,8 @@ router.post(
 router.put(
     '/:userId',
     //#swagger.tags = ['Users']
-    //#swagger.summary = 'Update a user by userId'
+    //#swagger.summary = 'Update a user by userId',
+    userValidator,
     usersController.editUser
 );
 

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const packagesController = require('../controllers/packages');
+const { packageValidator } = require('../utilities/validator');
 
 // Get all packages
 router.get(
@@ -21,7 +22,8 @@ router.get(
 router.post(
     '/',
     //#swagger.tags = ['Packages']
-    //#swagger.summary = 'Create a package.'
+    //#swagger.summary = 'Create a package.',
+    packageValidator,
     packagesController.addPackage
 );
 
@@ -29,7 +31,8 @@ router.post(
 router.put(
     '/:packageId',
     //#swagger.tags = ['Packages']
-    //#swagger.summary = 'Update a package by packageId'
+    //#swagger.summary = 'Update a package by packageId',
+    packageValidator,
     packagesController.editPackage
 );
 

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const destinationsController = require('../controllers/destinations');
+const { destinationValidator } = require('../utilities/validator');
 
 // Get all destinations
 router.get(
@@ -21,7 +22,8 @@ router.get(
 router.post(
     '/',
     //#swagger.tags = ['Destinations']
-    //#swagger.summary = 'Create a destination.'
+    //#swagger.summary = 'Create a destination.',
+    destinationValidator,
     destinationsController.addDestination
 );
 
@@ -29,7 +31,8 @@ router.post(
 router.put(
     '/:destinationId',
     //#swagger.tags = ['Destinations']
-    //#swagger.summary = 'Update a destination by destinationId'
+    //#swagger.summary = 'Update a destination by destinationId',
+    destinationValidator,
     destinationsController.editDestination
 );
 
