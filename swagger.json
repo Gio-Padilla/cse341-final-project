@@ -8,7 +8,7 @@
   "host": "cse341-final-project-z840.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/destinations/": {
