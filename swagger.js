@@ -7,7 +7,8 @@ const doc = {
         title: 'Travel Agency Api',
         description: 'An API for accessing the data of a travel agency.',
     },
-    host: 'cse341-final-project-z840.onrender.com',
+    //host: 'cse341-final-project-z840.onrender.com',
+    host: 'cse341-final-project-8h2b.onrender.com',
     schemes: ['https'],
 };
 

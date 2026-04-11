@@ -5,7 +5,7 @@
     "description": "An API for accessing the data of a travel agency.",
     "version": "1.0.0"
   },
-  "host": "cse341-final-project-z840.onrender.com",
+  "host": "cse341-final-project-8h2b.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
