@@ -15,11 +15,21 @@ const HOST = process.env.HOST || 'localhost';
 app.use(express.json());
 
 // Session middleware
-// This is user from Passport to persistent login sessions
+// This is used by Passport to persist login sessions
+const sessionSecret = process.env.SESSION_SECRET;
+if (process.env.NODE_ENV === 'production' && !sessionSecret) {
+    throw new Error('SESSION_SECRET must be set in production');
+}
+
 app.use(session({
-    secret: process.env.SESSION_SECRET || "secret", // You would want a secret key when in production to secure the session
+    secret: sessionSecret || 'secret', // Development fallback only
     resave: false,
-    saveUninitialized: false, // This is good so that it does not create an empty session
+    saveUninitialized: false, // Do not create session until something is stored
+    cookie: {
+        secure: process.env.NODE_ENV === 'production',
+        httpOnly: true,
+        sameSite: 'lax',
+    },
 }));
 
 // Initialize Passport and restore authentication state from session
@@ -27,12 +37,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // This middleware enables cross-origin requests by adding CORS headers
-// NOTE: Using both manual headers AND cors() is redundant, so we simplify it
-// NOTE: This replacesses all of the extra middleware from the other assignments.
+const allowedOrigins = process.env.CORS_ORIGINS
+    ? process.env.CORS_ORIGINS.split(',').map(origin => origin.trim())
+    : ['http://localhost:3000'];
+
 app.use(cors({
-    origin: '*', // In production, restrict this to your frontend URL
-    // origin: ['https://yourfrontend.com']
+    origin: allowedOrigins,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    credentials: true,
 }));
 
 // Routes
