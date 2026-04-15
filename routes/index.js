@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 
 // Primary api routes
 router.use('/destinations', authenticate.isManager, destinationRoutes);
-router.use('/users', userRoutes);
+router.use('/users', authenticate.isManager, userRoutes);
 router.use('/packages', authenticate.isManager, packageRoutes);
 router.use('/bookings', authenticate.isManager, bookingRoutes);
 router.use('/api-docs', swaggerRoutes);
