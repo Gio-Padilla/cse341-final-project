@@ -87,7 +87,6 @@ const editDestination = async (req, res) => {
         const destinationId = req.params.destinationId;
 
         const updatedDestination = {
-            destinationId: req.body.destinationId,
             name: req.body.name,
             country: req.body.country,
             description: req.body.description,
@@ -100,7 +99,7 @@ const editDestination = async (req, res) => {
             .getDatabase()
             .db()
             .collection('destinations')
-            .replaceOne({ destinationId }, updatedDestination);
+            .updateOne({ destinationId }, { $set: updatedDestination });
 
         if (response.matchedCount === 0) {
             return res.status(404).json({

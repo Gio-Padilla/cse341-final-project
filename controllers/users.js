@@ -85,7 +85,6 @@ const editUser = async (req, res) => {
         const userId = req.params.userId;
 
         const updatedUser = {
-            userId: req.body.userId,
             email: req.body.email,
             name: req.body.name,
             phone: req.body.phone,
@@ -96,7 +95,7 @@ const editUser = async (req, res) => {
             .getDatabase()
             .db()
             .collection('users')
-            .replaceOne({ userId }, updatedUser);
+            .updateOne({ userId }, { $set: updatedUser });
 
         if (response.matchedCount === 0) {
             return res.status(404).json({

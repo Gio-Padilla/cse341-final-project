@@ -115,7 +115,6 @@ const editBooking = async (req, res) => {
         const bookingId = req.params.bookingId;
 
         const updatedBooking = {
-            bookingId: req.body.bookingId,
             userId: req.body.userId,
             packageId: req.body.packageId,
             bookingDate: req.body.bookingDate,
@@ -129,7 +128,7 @@ const editBooking = async (req, res) => {
             .getDatabase()
             .db()
             .collection('bookings')
-            .replaceOne({ bookingId }, updatedBooking);
+            .updateOne({ bookingId }, { $set: updatedBooking });
 
         if (response.matchedCount === 0) {
             return res.status(404).json({

@@ -90,7 +90,6 @@ const editPackage = async (req, res) => {
         const packageId = req.params.packageId;
 
         const updatedPackage = {
-            packageId: req.body.packageId,
             title: req.body.title,
             destinationId: req.body.destinationId,
             durationDays: req.body.durationDays,
@@ -105,7 +104,7 @@ const editPackage = async (req, res) => {
             .getDatabase()
             .db()
             .collection('packages')
-            .replaceOne({ packageId }, updatedPackage);
+            .updateOne({ packageId }, { $set: updatedPackage });
 
         if (response.matchedCount === 0) {
             return res.status(404).json({
